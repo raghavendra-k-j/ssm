@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts (Including JetBrains Mono) -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded">
+    <h2 class="text-xl font-semibold mb-6">Edit Service - {{ service.name }}</h2>
+    <form action="/edit/{{ index }}" method="POST" class="space-y-4">
+      <input name="name" value="{{ service.name }}" required class="p-2 w-full border rounded-md" />
+      <input name="cmd" value="{{ service.cmd }}" required class="p-2 w-full border rounded-md" />
+      <input name="port" value="{{ service.port }}" type="number" required class="p-2 w-full border rounded-md" />
+      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Save Changes
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>
